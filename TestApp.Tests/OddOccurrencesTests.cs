@@ -9,36 +9,75 @@ public class OddOccurrencesTests
     [Test]
     public void Test_FindOdd_WithEmptyArray_ShouldReturnEmptyString()
     {
-        // TODO: finish test
+        //Arrange
+        string[] strings = Array.Empty<string>();
+
+        //Act
+        string actual = OddOccurrences.FindOdd(strings);    
+        string expected = string.Empty;
+
+        //Assert
+        Assert.AreEqual(expected, actual);
+
+
     }
 
-    // TODO: finish test
     [Test]
     public void Test_FindOdd_WithNoOddOccurrences_ShouldReturnEmptyString()
     {
-        // Arrange
+        //Arrange
+        string[] strings = new string[] { };
 
-        // Act
-        //string result = OddOccurrences.FindOdd(input);
+        //Act
+        string actual = OddOccurrences.FindOdd(strings);
+        string expected = string.Empty;
 
-        // Assert
+        //Assert
+        Assert.AreEqual(expected, actual);
+
     }
 
     [Test]
     public void Test_FindOdd_WithSingleOddOccurrence_ShouldReturnTheOddWord()
     {
-        // TODO: finish test
+        //Arrange
+        string[] strings = new string[] { "Naomi" };
+
+        //Act
+        string actual = OddOccurrences.FindOdd(strings);
+        string expected = "naomi";
+
+        //Assert
+        Assert.AreEqual(expected, actual);
     }
 
     [Test]
     public void Test_FindOdd_WithMultipleOddOccurrences_ShouldReturnAllOddWords()
     {
-        // TODO: finish test
+        //Arrange
+        string[] strings = new string[] { "Naomi", "mix", "mix", "Naomi", "Naomi", "Imoan", "mix", "Imoan" };
+
+        //Act
+        string actual = OddOccurrences.FindOdd(strings);
+        string expected = "naomi mix";
+
+        //Assert
+        Assert.AreEqual(expected, actual);
     }
 
     [Test]
     public void Test_FindOdd_WithMixedCaseWords_ShouldBeCaseInsensitive()
     {
-        // TODO: finish test
+        //Arrange
+        string[] strings = new string[] { "NaOMi", "mIx", "Mix", "naomI", "Naomi", "ImoaN", "mix", "ImoAN" };
+
+        //Act
+        string actual = OddOccurrences.FindOdd(strings);
+        string expected = "naomi mix";
+
+        //Assert
+        Assert.AreEqual(expected, actual);
     }
+
 }
+

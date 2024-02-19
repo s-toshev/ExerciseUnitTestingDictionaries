@@ -9,30 +9,58 @@ public class PlantsTests
     [Test]
     public void Test_GetFastestGrowing_WithEmptyArray_ShouldReturnEmptyString()
     {
-        // TODO: finish test
+        // Arrange
+        string[] arr = Array.Empty<string>();
+
+        // Act
+        string actual = Plants.GetFastestGrowing(arr);
+        string expected = string.Empty;
+
+        // Assert    
+        Assert.AreEqual(expected, actual);
+
     }
 
-    // TODO: finish test
     [Test]
     public void Test_GetFastestGrowing_WithSinglePlant_ShouldReturnPlant()
     {
         // Arrange
+        string[] arr = { "Banana" };
 
         // Act
-        //string result = Plants.GetFastestGrowing(plants);
+        string actual = Plants.GetFastestGrowing(arr);
+        string expected = "Plants with 6 letters:\r\nBanana";
 
-        // Assert
+        // Assert    
+        Assert.AreEqual(expected, actual);
     }
 
     [Test]
     public void Test_GetFastestGrowing_WithMultiplePlants_ShouldReturnGroupedPlants()
     {
-        // TODO: finish test
+        // Arrange
+        string[] arr = { "Banana", "Orange", "Kiwi" };
+
+        // Act
+        string actual = Plants.GetFastestGrowing(arr);
+        string expected = "Plants with 4 letters:\r\nKiwi\r\nPlants with 6 letters:\r\nBanana\r\nOrange";
+
+        // Assert    
+        Assert.AreEqual(expected, actual);
+
     }
 
     [Test]
     public void Test_GetFastestGrowing_WithMixedCasePlants_ShouldBeCaseInsensitive()
     {
-        // TODO: finish test
+        // Arrange
+        string[] arr = { "BaNana", "OrANge", "KiWi","RosE" };
+
+        // Act
+        string actual = Plants.GetFastestGrowing(arr);
+        string expected = "Plants with 4 letters:\r\nKiwi\r\nRose\r\nPlants with 6 letters:\r\nBanana\r\nOrange";
+
+        // Assert    
+        Assert.AreEqual(expected, actual);
     }
 }
